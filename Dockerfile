@@ -12,3 +12,5 @@ RUN docker-php-ext-install json
 RUN apt-get install -y zlib1g-dev && docker-php-ext-configure zip --with-zlib-dir=/usr && docker-php-ext-install zip
 RUN rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /var/log/fpm/ && touch /var/log/fpm/error.log && chmod 777 /var/log/fpm/error.log
+
+WORKDIR /var/www
