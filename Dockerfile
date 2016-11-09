@@ -14,3 +14,5 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /var/log/fpm/ && touch /var/log/fpm/error.log && chmod 777 /var/log/fpm/error.log
 
 WORKDIR /var/www
+EXPOSE 9000
+ENTRYPOINT ["php-fpm","-F"]
